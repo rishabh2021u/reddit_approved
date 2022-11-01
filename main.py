@@ -1,4 +1,4 @@
-import os
+import os, requests
 
 
 with open("run.py", "w+") as file:
