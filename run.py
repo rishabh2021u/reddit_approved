@@ -17,7 +17,7 @@ for contributor in reddit1.subreddit("Bharat_verse").contributor(limit=1000):
 for item in data:
     username=item["username"]
     if item["sub"] != "india" and username not in authors:
-        if reddit.redditor(username)!=None:
+        if reddit1.redditor(username)!=None:
           reddit1.subreddit("Bharat_verse").contributor.add(username)
           print(username)
           authors.append(username)
