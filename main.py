@@ -7,8 +7,11 @@ data=requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/approved.j
 
 
 authors=[]
-for contributor in reddit1.subreddit("Bharat_verse").contributor():
-    authors.append(str(contributor))
+authors=requests.get("https://gitlab.com/rishabh-modi2/public/-/raw/main/approved_authors.json").json()
+
+for contributor in reddit1.subreddit("Bharat_verse").contributor(limit=1000):
+    if str(contributor) not in authors:
+        authors.append(str(contributor))
 
 
 for item in data:
