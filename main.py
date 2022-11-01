@@ -17,5 +17,5 @@ for item in data:
         reddit1.subreddit("Bharat_verse").contributor.add(username)
         print(username)
         authors.append(username)
-        time.sleep(random.randint(90, 60))
+        time.sleep(random.randint(60, 90))
   
