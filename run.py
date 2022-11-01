@@ -13,14 +13,21 @@ for contributor in reddit1.subreddit("Bharat_verse").contributor(limit=1000):
     if str(contributor) not in authors:
         authors.append(str(contributor))
 
+def user_exists(name):
+    try:
+        reddit1.redditor(name).id
+    except NotFound:
+        return False
+    return True    
 
 for item in data:
     username=item["username"]
     if item["sub"] != "india" and username not in authors:
-        if reddit1.redditor(username)!=None:
+        if user_exists(username)==True:
           print(username)
           reddit1.subreddit("Bharat_verse").contributor.add(username)
-          
           authors.append(username)
           time.sleep(random.randint(60, 90))
-  
+        
+        else:
+            print(f"{username} Not Found")
