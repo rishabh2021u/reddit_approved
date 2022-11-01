@@ -18,8 +18,9 @@ for item in data:
     username=item["username"]
     if item["sub"] != "india" and username not in authors:
         if reddit1.redditor(username)!=None:
-          reddit1.subreddit("Bharat_verse").contributor.add(username)
           print(username)
+          reddit1.subreddit("Bharat_verse").contributor.add(username)
+          
           authors.append(username)
           time.sleep(random.randint(60, 90))
   
